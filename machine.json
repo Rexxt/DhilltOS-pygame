@@ -1,0 +1,5 @@
+{
+    "capped_fps": 60,
+    "default_resolution": [800, 600],
+    "display_fps": false
+}
