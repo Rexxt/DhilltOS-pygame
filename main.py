@@ -48,8 +48,6 @@ writeText(screen, 'VictorMono/VictorMono-Bold', 'Drivers ready', 0, 12, (255, 25
 # creating our frame regulator
 clock = pygame.time.Clock()
 
-box = box.Box(100, 100, 100, 100)
-
 dt = 0
 # forever loop
 pygame.display.set_caption(f'DhilltOS v{vstring} (login) @ {frames_per_second}FPS')
@@ -76,9 +74,6 @@ while True:
 
 	if dt > 0 and MACHINE_SETTINGS['display_fps']:
 		writeText(screen, 'VictorMono/VictorMono-Regular', f'{round(1/dt)} FPS', 0, 0, (255, 255, 255), 12, (64, 64, 64))
-	
-	pygame.draw.rect(screen, (255, 255, 255), box.rect, border_radius=10)
-	writeText(screen, 'VictorMono/VictorMono-Regular', f'{box.rect.x}, {box.rect.y}', box.rect.x, box.rect.y, (255, 255, 255), 12, (0, 0, 64))
 
 	pygame.display.flip()
 
