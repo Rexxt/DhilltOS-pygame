@@ -1,6 +1,6 @@
 # DhilltOS, Graphical edition
 # 2023, Mizu, kevadesu and contributors
-import pygame, json, sys, os, datetime, time, box
+import pygame, json, sys, os, datetime, time
 
 def writeText(window, font_name, string, x, y, colour, fs, bg = None):
 	font = pygame.font.Font(f'storage/fonts/{font_name}.ttf', fs)
@@ -64,13 +64,6 @@ while True:
 		elif event.type == pygame.VIDEORESIZE:
 			screen = pygame.display.set_mode((event.w, event.h), pygame.RESIZABLE)
 			SYS_IMAGES['lock'] = pygame.transform.scale(SYS_IMAGES['lock'], (event.w, event.h))
-		elif event.type == pygame.MOUSEBUTTONUP:
-			box.mouse_up(event)
-		elif event.type == pygame.MOUSEBUTTONDOWN:
-			box.mouse_down(event)
-		elif event.type == pygame.MOUSEMOTION:
-			box.mouse_move(event)
-		
 
 	if dt > 0 and MACHINE_SETTINGS['display_fps']:
 		writeText(screen, 'VictorMono/VictorMono-Regular', f'{round(1/dt)} FPS', 0, 0, (255, 255, 255), 12, (64, 64, 64))
